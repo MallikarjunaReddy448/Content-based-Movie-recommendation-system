@@ -1,6 +1,7 @@
 from fuzzywuzzy import process
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
+import fuzzywuzzy
 import pickle
 import os
 import ast 

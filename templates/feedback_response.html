@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Feedback Submitted</h2>
+    <p>{{ response_message }}</p>
+    <button id="backToHome" class="btn">Back to Home</button>
+</div>
+{% block scripts %}
+<script>
+    document.getElementById("backToHome").addEventListener("click", function() {
+        window.location.href = "{% url 'home' %}";
+    });
+</script>
+{% endblock %}
+{% endblock %}
