@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Movie Recommendation System</h1>
+    </div>
+
+    <!-- Alert/Notification Banner -->
+    <div class="alert-banner">
+        🚨 *This recommendation system is trained on a limited selection of movies, but we're working hard to include many more exciting titles! Stay tuned for updates!* 🎬
+    </div>
+
+    <div class="sidebar" id="mySidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'contact_feedback' %}">Contact & Feedback</a> <!-- Updated Link -->
+    </div>
+
+    <div class="main">
+        <button class="openbtn" onclick="openSidebar()" aria-label="Open Sidebar">☰ Menu</button>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <script>
+        // Sidebar Functions
+        function openSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.querySelector(".main").style.marginLeft = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.querySelector(".main").style.marginLeft = "0";
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close Modal on Outside Click
+        window.onclick = function(event) {
+            const contactModal = document.getElementById('contactModal');
+            const feedbackModal = document.getElementById('feedbackModal');
+            if (event.target === contactModal) {
+                closeModal('contactModal');
+            } else if (event.target === feedbackModal) {
+                closeModal('feedbackModal');
+            }
+        }
+    </script>
+</body>
+</html>

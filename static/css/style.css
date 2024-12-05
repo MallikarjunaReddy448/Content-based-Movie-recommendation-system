@@ -1,0 +1,444 @@
+/* General Styles */
+body {
+    margin: 0; /* Ensure no margin is applied globally */
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    display: block; /* Change from flex to block */
+    text-align: center;
+    height: 100vh; /* Ensure the page takes full height */
+}
+
+/* Header and Alert Banner */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Alert Banner Styling */
+.alert-banner {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    animation: scrollAlert 20s linear infinite; /* Animation for scrolling text */
+}
+
+/* Keyframes for the scrolling effect */
+@keyframes scrollAlert {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left */
+    }
+}
+
+/* Optional: Style for emojis in the banner */
+.alert-banner span {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .alert-banner {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+
+/* Sidebar */
+.sidebar {
+    height: 100%; /* Make the sidebar take the full height */
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    border: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 10px;
+}
+
+/* Content Section (for form and other content) */
+.main {
+    padding: 20px;
+    margin-top: 50px; /* Ensure content doesn't overlap with fixed elements like the header */
+}
+
+/* Centered Container for Forms */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Set a max width to avoid full-page width */
+    padding: 20px;
+    margin: auto; /* Center horizontally */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Container Box */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: auto; /* Center horizontally */
+    background-color: #f9f9f9; /* Light background for form box */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Input Styles */
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Submit Button */
+button.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button.btn:hover {
+    background-color: #45a049;
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    .container {
+        width: 70%; /* Slightly wider for tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 50%; /* Further width adjustment for larger screens */
+    }
+}
+
+/* Table Styling for Recommendations */
+.content table {
+    width: 100%; /* Ensure the table takes up the full width of the container */
+    border-collapse: collapse; /* Merge table borders for a cleaner look */
+    margin-top: 20px; /* Space above the table */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+.content table, .content th, .content td {
+    border: 1px solid #ddd; /* Light gray border for the table, header, and data cells */
+}
+
+.content th, .content td {
+    padding: 12px; /* Padding inside cells for readability */
+    text-align: center; /* Align text to the left for better readability */
+}
+
+.content th {
+    background-color: #4CAF50; /* Green background for headers */
+    color: white; /* White text color for header */
+}
+
+.content tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+.content tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+}
+
+/* Button Styling for "Back to Home" */
+#backToHome {
+    background-color: #4CAF50; /* Green color for button */
+    color: white; /* White text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make button full width on smaller screens */
+    margin-top: 20px; /* Add margin at the top */
+}
+
+#backToHome:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Additional Text Styling for Feedback */
+.content h3 {
+    font-size: 20px;
+    margin-top: 20px; /* Margin for spacing between elements */
+    color: #333; /* Dark text color */
+}
+
+.content p {
+    font-size: 16px;
+    color: #555; /* Lighter text color for paragraphs */
+    margin-bottom: 20px; /* Space below each paragraph */
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.instructions {
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.instructions h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.instructions ol {
+    margin-left: 20px;
+}
+
+.social-links {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.social-links h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    margin: 10px 0;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #0077b5; /* LinkedIn Blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Container for suggestion section */
+.suggestion-section {
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Title and heading styling */
+.suggestion-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Description paragraph */
+.suggestion-section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.suggestion-section form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 10px; /* Adjust space between elements */
+    width: 100%;
+}
+
+.suggestion-section label {
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Optional: to make labels stand out */
+}
+
+.suggestion-section input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0; /* Ensure no extra margin between inputs */
+}
+
+.suggestion-section button {
+    padding: 10px 15px;
+    background-color: #05339c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.suggestion-section button:hover {
+    background-color: #2d9b33;
+}
+
+
+/* Optional styling for better spacing */
+.suggestion-section input[type="text"]:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/* Container for contact section */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contact section styling */
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Contact heading */
+.contact-section h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Contact description paragraph */
+.contact-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Email styling */
+.contact-section p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styled email link */
+.contact-section p a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-section p a:hover {
+    color: #003f7f;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 24px;
+    }
+
+    .contact-section p {
+        font-size: 14px;
+    }
+}

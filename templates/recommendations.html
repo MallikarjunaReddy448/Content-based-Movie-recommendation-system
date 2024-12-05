@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+
+    <h3>
+        Great choice: <strong>{{ movie_title }}</strong>! Here are some movies we recommend for you. Choose a movie and enjoy your movie time 😊.
+    </h3>
+
+    <h2>Movie Recommendations</h2>
+    
+    {% if recommendations %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Genre</th>
+                    <th>Release Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in recommendations %}
+                    <tr>
+                        <td>{{ movie.Movie_Name }}</td>
+                        <td>{{ movie.Genre }}</td>
+                        <td>{{ movie.Movie_Release_Year }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Your feedback is crucial! We’d love to hear how you enjoyed our movie recommendations. Sharing your experience will help us enhance the accuracy of future suggestions and give you even better movie choices next time.</h3>
+        <p>Help us keep improving! Share your thoughts and suggestions on the movies recommended by our system – your feedback is what shapes the future of our service.</p>
+        <h3>Head to Menu --> Contact & Feedback to share your thoughts and suggestions!</h3>
+        <button id="backToHome" class="btn">Back to Home</button>
+
+    {% else %}
+        <p>No recommendations found. Please try another Movie or Genre.</p>
+        <p>If you could not find the movie, try a fuzzy search by typing a partial name!</p>
+        <button id="backToHome" class="btn">Back to Home</button>
+    {% endif %}
+</div>
+
+{% block scripts %}
+<script>
+    document.getElementById("backToHome").addEventListener("click", function() {
+        window.location.href = "{% url 'home' %}";
+    });
+</script>
+{% endblock %}
+{% endblock %}

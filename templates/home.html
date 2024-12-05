@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="welcome-text">
+    <h1>Welcome to Movie Recommender!</h1>
+    <p>Get the best movie recommendations tailored just for you. Please follow the instructions below for accurate suggestions.</p>
+</div>
+
+<div class="form-container">  
+    <form action="{% url 'recommendations' %}" method="POST">
+        {% csrf_token %}
+        <label for="movie_title">Movie Title:</label>
+        <input type="text" id="movie_title" name="Movie Name" placeholder="Eg. Bahubali The Begining" required><br><br>
+
+        <label for="genre">Genre (optional):</label>
+        <input type="text" id="genre" name="Genre" placeholder="Eg. Action Epic, Epic, One-Person Army Action, Action, Drama"><br><br>
+
+        <button type="submit" class="btn">Get Movie Recommendations</button>
+    </form>
+</div>
+
+<div class="instructions">
+    <h2>Instructions to Get the Best Recommendations:</h2>
+    <ol>
+        <li>Enter the correct movie name and genre (if known).</li>
+        <li>If you are unsure of the genre, please Google the movie name to find its genre and enter it here.</li>
+    </ol>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+<!-- contact_feedback.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="contact-section">
+        <h2>Contact</h2>
+        <p>We want to hear from you! If there’s a movie or genre we haven’t recommended yet, feel free to share your suggestions with us. Your input helps us create a more personalized experience for everyone!</p>
+        <p><strong>Email:</strong> mallikarjunreddy448@gmail.com</p>
+    </div>
+
+    <div class = "social-links">
+        <h2> Connect with me </h2>
+        <p>Want to know more about my work? Check out my professional profiles and projects:</p>
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/mallikarjuna-reddy-841190246", target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-icon">
+                    Visit my LinkedIn  
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/MallikarjunaReddy448", target="_blank">
+                   <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="social-icon">
+                   Explore my GitHub Projects
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="suggestion-section">
+        <h2>Suggest a Missing Movie</h2>
+        <p>If you know of a movie or genre that is missing from our recommendations, let us know! We'd love to add it to our list and enhance the experience for everyone.</p>
+        
+        <form method="post" action="{% url 'contact_feedback' %}">
+            {% csrf_token %}
+            
+            <label for="user_name">User Name:</label><br>
+            <input type="text" name="user_name" id="user_name" required><br><br>
+
+            <label for="email">E-Mail:</label><br>
+            <input type="text" name="email" id="email"><br><br>
+
+            <label for="movie_name">Movie Name:</label><br>
+            <input type="text" name="movie_name" id="movie_name" required><br><br>
+
+            <label for="movie_genre">Genre (optional):</label><br>
+            <input type="text" name="movie_genre" id="movie_genre"><br><br>
+
+            <button type="submit" class="btn">Submit Suggestion</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
