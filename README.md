@@ -3,7 +3,7 @@
 ## Overview
 This project is a **Movie Recommendation Web Application** that provides movie suggestions based on user input, such as movie name and genre. The system uses a content-based filtering approach with cosine similarity for generating recommendations. 
 
-The app is deployed and accessible at: [Movie Recommendation App](https://mallikarjunareddy.pythonanywhere.com)
+The app is deployed and accessible at: [Movie Recommendation App](https://arjunreddy369.pythonanywhere.com/)
 
 ---
 
@@ -33,7 +33,7 @@ The app is deployed and accessible at: [Movie Recommendation App](https://mallik
 - **Django:** Backend development and web application.
 
 ### **Deployment:**
-- Hosted on [PythonAnywhere](https://mallikarjunareddy.pythonanywhere.com).
+- Hosted on [PythonAnywhere](https://arjunreddy369.pythonanywhere.com/).
 
 ---
 
