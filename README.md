@@ -60,7 +60,7 @@ The app is deployed and accessible at: [Movie Recommendation App](https://arjunr
 2. **Recommendation:** 
    - The system uses cosine similarity to find and suggest the most relevant movies.
 3. **Output:** 
-   - Displays a list of recommended movies along with their genres and release years.
+   - Displays a list of recommended movies along with their genres, description and release years.
 
 ---
 
